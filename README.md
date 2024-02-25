@@ -75,7 +75,7 @@ end
 |Resource|API endpoint|
 |:--|:--|
 |.information | returns `name userId login accountType websocketSubscriptionUrl homes including homes meteringPointData, subscriptions` and `features` |
-|.price_info|price information for all homes[id,currentSubscription{priceInfo{current,today[],tomorrow[]}}]  |
+|.price_info|price information for all `homes[id,currentSubscription{priceInfo{current,today[],tomorrow[]}}]`  |
 |.consumption(home_id, resolution, count)|Array of `home.consumption.nodes[]`: `from to cost unitPrice unitPriceVAT consumption consumptionUnit`|
 |.send_push_notification(title, message, screen_to_open)| send notificartion ot devices and returns `successful` & `pushedToNumberOfDevices`|
 
