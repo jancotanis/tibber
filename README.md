@@ -1,4 +1,4 @@
-# Hudu API
+# Tibber API
 [![Version](https://img.shields.io/gem/v/tibber.svg)](https://rubygems.org/gems/tibber)
 
 This is a wrapper for the Tibber rest API.
