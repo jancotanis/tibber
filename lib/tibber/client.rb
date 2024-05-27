@@ -22,7 +22,7 @@ module Tibber
 
       # all records
       self.send(:define_method, method) do |params = {}|
-        r = graphql_call(query, params)
+        graphql_call(query, params)
       end
     end
 
