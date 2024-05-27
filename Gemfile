@@ -2,5 +2,5 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in hudu.gemspec
+# Specify your gem's dependencies in tibber.gemspec
 gemspec
