@@ -27,10 +27,11 @@ describe 'client' do
     end
 
     subscription = prices.homes.first.currentSubscription.priceInfo
-    assert value(subscription.today.count).must_equal(24), 'prices for 24 hrs'
-    assert value(subscription.tomorrow.count).must_equal(24), 'prices for 24 hrs'
     now = Time.now.to_s[0..9]
     assert subscription.current.startsAt[now], "current from today '#{subscription.current.startsAt}' vs ''#{now}''"
+
+    assert value(subscription.today.count).must_equal(24), 'prices for 24 hrs'
+    assert value(subscription.tomorrow.count).must_equal(24), 'prices for 24 hrs'
   end
 
   it "#2 consumption info" do
