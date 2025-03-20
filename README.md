@@ -26,7 +26,8 @@ Or install it yourself as:
 
 ## Usage
 
-Before you start making the requests to API provide the endpoint and api key using the configuration wrapping.
+Before you start making the requests to API provide the endpoint and api key
+using the configuration wrapping.
 
 ```ruby
 require 'tibber'
@@ -95,6 +96,7 @@ end
 > rake test
 > rake build
 ```
+
 5. Release
 
 ```console
@@ -103,7 +105,7 @@ end
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/jancotanis/tibber.
+Bug reports and pull requests are welcome on [GitHub](https://github.com/jancotanis/tibber).
 
 ## License
 
