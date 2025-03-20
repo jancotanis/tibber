@@ -137,7 +137,7 @@ module Tibber
           }
         }
       }'
-    api_endpoint:_send_push_notification, '
+    api_endpoint :_send_push_notification, '
     mutation {
       sendPushNotification(input: {
         title: "%{title}",
