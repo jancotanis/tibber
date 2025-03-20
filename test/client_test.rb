@@ -1,13 +1,12 @@
-require 'dotenv'
+# frozen_string_literal: true
+
 require 'logger'
 require 'test_helper'
-
 
 describe 'client' do
   before do
     @client = Tibber.client
   end
-
 
   it '#1 GET info' do
     info = @client.information
@@ -31,7 +30,9 @@ describe 'client' do
     assert subscription.current.startsAt[now], "current from today '#{subscription.current.startsAt}' vs ''#{now}''"
 
     assert value(subscription.today.count).must_equal(24), 'prices for 24 hrs'
-    assert value(subscription.tomorrow.count).must_equal(24), 'prices for 24 hrs'
+    # new prices for tomorrow are available  around 13:00
+    tomorrow_count = (Time.now.hour >= 13) ? 24 : 0
+    assert value(subscription.tomorrow.count).must_equal(tomorrow_count), 'prices for tomorrow is >13:00'
   end
 
   it "#2 consumption info" do
@@ -48,4 +49,14 @@ describe 'client' do
     assert e.to_s['not allowed for demo ']
   end
 
+  it "#5 empty graph ql call exception" do
+    assert_raises Tibber::GraphQLError do
+      @client.graphql_call('')
+      flunk( 'GraphQLError expected' )
+    end
+  end
+
+  it "#6 config" do
+    assert _(@client.config[:endpoint]).must_equal Tibber::DEFAULT_ENDPOINT
+  end
 end

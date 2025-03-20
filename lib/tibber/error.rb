@@ -1,5 +1,6 @@
-module Tibber
+# frozen_string_literal: true
 
+module Tibber
   # Generic error to be able to rescue all Hudu errors
   class TibberError < StandardError; end
 
@@ -11,5 +12,4 @@ module Tibber
 
   # Issue authenticting
   class AuthenticationError < TibberError; end
-
 end

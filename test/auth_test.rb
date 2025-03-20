@@ -1,10 +1,9 @@
-require 'dotenv'
+# frozen_string_literal: true
+
 require 'logger'
 require 'test_helper'
 
-
 describe 'authentication' do
-
   it '#1 use wrong access_code' do
     assert_raises Tibber::AuthenticationError do
       client = Tibber.client( { access_token: Tibber.access_token+"xxx"} )
@@ -12,5 +11,4 @@ describe 'authentication' do
       flunk( 'AuthenticationError expected' )
     end
   end
-
 end

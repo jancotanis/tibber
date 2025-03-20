@@ -1,8 +1,8 @@
 # Tibber API
+
 [![Version](https://img.shields.io/gem/v/tibber.svg)](https://rubygems.org/gems/tibber)
 
 This is a wrapper for the Tibber rest API.
-
 
 ## Installation
 
@@ -14,11 +14,15 @@ gem 'tibber'
 
 And then execute:
 
-    $ bundle install
+```console
+> bundle install
+```
 
 Or install it yourself as:
 
-    $ gem install tibber
+```console
+> gem install tibber
+```
 
 ## Usage
 
@@ -41,7 +45,9 @@ client.login
 ```
 
 ## Resources
+
 ### Authentication
+
 ```ruby
 # setup
 #
@@ -54,9 +60,8 @@ rescue Tibber::AuthenticationError => e
 end
 ```
 
-
-
 ### Graph QL Data resources
+
 Endpoint for data related requests
 
 ```ruby
@@ -85,13 +90,16 @@ end
 2. Add release to [CHANGELOG.md](CHANGELOG.md)
 3. Commit.
 4. Test build.
-```
-> rake build
 
+```console
+> rake test
+> rake build
 ```
 5. Release
-```
+
+```console
 > rake release
+```
 
 ## Contributing
 

@@ -1,12 +1,11 @@
-require "wrapi"
+# frozen_string_literal: true
+
+require 'wrapi'
 require File.expand_path('request', __dir__)
 require File.expand_path('authorization', __dir__)
 
 module Tibber
-  # @private
   class API
-
-    # @private
     attr_accessor *WrAPI::Configuration::VALID_OPTIONS_KEYS
 
     # Creates a new API and copies settings from singleton
@@ -30,6 +29,5 @@ module Tibber
     include Request::GraphQL
     include WrAPI::Authentication
     include Authentication
-
   end
 end

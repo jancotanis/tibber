@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require File.expand_path('api', __dir__)
 require File.expand_path('const', __dir__)
 require File.expand_path('error', __dir__)
@@ -17,16 +19,13 @@ module Tibber
       raise AuthenticationError.new e
     end
 
-  private
     def self.api_endpoint(method, query)
-
       # all records
       self.send(:define_method, method) do |params = {}|
         graphql_call(query, params)
       end
     end
 
-  public
     # return device information
     # product_type
     # product_name
