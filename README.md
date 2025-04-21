@@ -40,7 +40,7 @@ Tibber.configure do |config|
 end
 
 # or configure with options hash
-client = Tibber.client
+client = Tibber.client(access_token: ENV['TIBBER_ACCESS_TOKEN'], logger: Logger.new(TEST_LOGGER))
 client.login
 
 ```
