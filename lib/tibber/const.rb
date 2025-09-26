@@ -57,13 +57,12 @@ module Tibber
   #   Resolution::DAILY    # => "DAILY"
   class Resolution < Enum
     # Defines time resolution constants:
-    # - QUARTER_HOURLY
     # - HOURLY
     # - DAILY
     # - WEEKLY
     # - MONTHLY
     # - ANNUAL
-    enum %w[QUARTER_HOURLY HOURLY DAILY WEEKLY MONTHLY ANNUAL]
+    enum %w[HOURLY DAILY WEEKLY MONTHLY ANNUAL]
   end
 
   # The `HomeType` class defines different types of homes as constants.

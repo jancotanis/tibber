@@ -7,7 +7,3 @@
 ## [0.1.1] - 2025-03-20
 
 - update tests, simplify some code, add docs
-
-## [0.2.0] - 2025-09-26
-
-- support quarterly resolution for price info

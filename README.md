@@ -66,7 +66,7 @@ end
 Endpoint for data related requests
 
 ```ruby
-# show todays prices; by default prices are per hour
+# show todays prices
 prices = client.price_info
 
 prices.homes.each do |home|
@@ -75,8 +75,7 @@ prices.homes.each do |home|
     puts "#{hour.startsAt} #{hour.total} #{hour.currency} (#{hour.energy} + #{hour.tax})"
   end
 end
-# but also possible per quarter
-prices = client.price_info(Tibber::Resolution::QUARTER_HOURLY)
+
 ```
 
 |Resource|API endpoint|
