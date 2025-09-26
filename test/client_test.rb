@@ -34,6 +34,18 @@ describe 'client' do
     tomorrow_count = (Time.now.hour >= 13) ? 24 : 0
     assert value(subscription.tomorrow.count).must_equal(tomorrow_count), 'prices for tomorrow is >13:00'
   end
+  it "#2 quarterly price info" do
+    prices = @client.price_info(Tibber::Resolution::QUARTER_HOURLY)
+
+    subscription = prices.homes.first.currentSubscription.priceInfo
+    now = Time.now.to_s[0..9]
+    assert subscription.current.startsAt[now], "current from today '#{subscription.current.startsAt}' vs ''#{now}''"
+
+    assert value(subscription.today.count).must_equal(24*4), 'prices for 24 hrs'
+    # new prices for tomorrow are available  around 13:00
+    tomorrow_count = (Time.now.hour >= 13) ? 24*4 : 0
+    assert value(subscription.tomorrow.count).must_equal(tomorrow_count), 'prices for tomorrow is >13:00'
+  end
 
   it "#2 consumption info" do
     consumption = @client.consumption(@client.information.homes.first.id, Tibber::Resolution::HOURLY, 24).home.consumption

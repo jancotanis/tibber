@@ -104,13 +104,13 @@ module Tibber
         }
       }
     }'
-    api_endpoint :price_info, '
+    api_endpoint :_price_info, '
       {
         viewer {
           homes {
             id
             currentSubscription{
-              priceInfo{
+              priceInfo(resolution: %{resolution}){
                 current{
                   startsAt
                   total
@@ -137,6 +137,9 @@ module Tibber
           }
         }
       }'
+    def price_info(resolution = Resolution::HOURLY)
+      _price_info({ resolution: resolution })
+    end
     api_endpoint :_send_push_notification, '
     mutation {
       sendPushNotification(input: {
